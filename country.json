@@ -1,0 +1,32 @@
+[
+  {
+    "image": "https://cdn.britannica.com/97/189797-050-1FC0041B/Night-view-Dhaka-Bangladesh.jpg",
+    "country_name": "Bangladesh",
+    "description": "Bangladesh, located in South Asia, is known for its lush landscapes, vibrant culture, and rich history. Explore the world's largest mangrove forest in Sundarbans, relax on the sandy beaches of Cox's Bazar, and experience the traditional tribal culture of the Chittagong Hill Tracts."
+  },
+  {
+    "image": "https://a.cdn-hotels.com/gdcs/production146/d585/aa60115c-bdfc-479f-88ba-5cb0f15a5af8.jpg",
+    "country_name": "Thailand",
+    "description": "Thailand, in Southeast Asia, is renowned for its stunning beaches, ornate temples, and vibrant street life. Discover the bustling capital city of Bangkok, explore the ancient ruins of Ayutthaya, and unwind on the picturesque islands of Phuket and Phi Phi."
+  },
+  {
+    "image": "https://www.rjtravelagency.com/wp-content/uploads/2023/09/Indonesia.jpg",
+    "country_name": "Indonesia",
+    "description": "Indonesia, the largest archipelago in the world, offers diverse landscapes, cultures, and experiences. Visit the paradise island of Bali, explore the ancient Borobudur Temple in Yogyakarta, and encounter the famous Komodo dragons in Komodo National Park."
+  },
+  {
+    "image": "https://media.istockphoto.com/id/466842820/photo/petronas-towers.jpg?s=612x612&w=0&k=20&c=X_Kl-W_ulJEzjvaaT8gRNTQWHboyLKaedXol5EPhGdI=",
+    "country_name": "Malaysia",
+    "description": "Malaysia, located in Southeast Asia, is known for its diverse culture, stunning natural beauty, and modern cities. Experience the bustling metropolis of Kuala Lumpur, relax on the pristine beaches of Langkawi, and explore the historic sites of Malacca."
+  },
+  {
+    "image": "https://d2bgjx2gb489de.cloudfront.net/gbb-blogs/wp-content/uploads/2023/07/13164158/Asian-woman-wearing-Vietnam-culture-traditional-at-Trang-An-Vietnam.-1.jpg",
+    "country_name": "Vietnam",
+    "description": "Vietnam, on the eastern edge of the Indochinese Peninsula, is famous for its lush landscapes, rich history, and delicious cuisine. Explore the bustling streets of Hanoi, cruise through the breathtaking scenery of Ha Long Bay, and visit the ancient town of Hoi An."
+  },
+  {
+    "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/1768E/production/_130868859_angkorwatview07_afp.jpg",
+    "country_name": "Cambodia",
+    "description": "Cambodia, located in Southeast Asia, is renowned for its magnificent temples, stunning landscapes, and warm hospitality. Discover the awe-inspiring Angkor Wat complex in Siem Reap, relax on the beautiful beaches of Sihanoukville, and explore the vibrant capital city of Phnom Penh."
+  }
+]

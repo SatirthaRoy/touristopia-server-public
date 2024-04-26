@@ -1,15 +1,18 @@
 const express = require('express');
 const cors = require('cors');
 const { MongoClient, ServerApiVersion } = require('mongodb');
-
+require('dotenv').config()
 const app = express();
 
 const port = process.env.PORT || 5000;
+const pass = process.env.USER_PASS;
+const name = process.env.USER_NAME;
+
 
 app.use(cors());
 app.use(express.json());
 
-const uri = "mongodb+srv://satirtharoy2003:himu2003@mydatabase.ofrvnz1.mongodb.net/?retryWrites=true&w=majority&appName=mydatabase";
+const uri = `mongodb+srv://${name}:${pass}@mydatabase.ofrvnz1.mongodb.net/?retryWrites=true&w=majority&appName=mydatabase`;
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(uri, {
@@ -25,18 +28,29 @@ async function run() {
 
     const database = client.db("Tourists_database");
     const spots = database.collection("spots");
+    const countries = database.collection('countries');
 
+    // gets tour spots data
     app.get('/spots', async(req, res) => {
       const cursor = spots.find();
       const result = await cursor.toArray();
       res.send(result);
     })
 
+    // adds tour spots
     app.post('/spots', async(req, res) => {
       const spot_data = req.body;
       const result = await spots.insertOne(spot_data);
       res.send(result);
     })
+
+    // gets countries data
+    app.get('/countries', async(req, res) => {
+      const cursor = countries.find();
+      const result = await cursor.toArray();
+      res.send(result);
+    })
+
 
     // Connect the client to the server	(optional starting in v4.7)
     await client.connect();
