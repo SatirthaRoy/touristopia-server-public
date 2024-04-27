@@ -1,6 +1,6 @@
 const express = require('express');
 const cors = require('cors');
-const { MongoClient, ServerApiVersion } = require('mongodb');
+const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
 require('dotenv').config()
 const app = express();
 
@@ -37,6 +37,15 @@ async function run() {
       res.send(result);
     })
 
+    // get specific spot by id
+
+    app.get('/spots/:id', async(req, res) => {
+      const id = req.params.id;
+      const query = {_id: new ObjectId(id)}
+      const result = await spots.findOne(query);
+      res.send(result);
+    })
+
     // adds tour spots
     app.post('/spots', async(req, res) => {
       const spot_data = req.body;
@@ -47,6 +56,16 @@ async function run() {
     // gets countries data
     app.get('/countries', async(req, res) => {
       const cursor = countries.find();
+      const result = await cursor.toArray();
+      res.send(result);
+    })
+
+    // get spots by countries
+    app.get('/country/:countryName', async(req, res) => {
+      const country = req.params.countryName;
+      const query = {country: country}
+      console.log(query);
+      const cursor = spots.find(query);
       const result = await cursor.toArray();
       res.send(result);
     })
