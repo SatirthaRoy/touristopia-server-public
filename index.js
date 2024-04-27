@@ -70,6 +70,47 @@ async function run() {
       res.send(result);
     })
 
+    // get spots by email
+    app.get('/:email', async(req, res) => {
+      console.log('entered in email finding');
+      const email = req.params.email;
+      const query = {email: email};
+      const cursor = spots.find(query);
+      const result = await cursor.toArray();
+      res.send(result);
+    })
+
+    // update a spot details
+    app.patch('/update/:id', async(req,res) => {
+      const id = req.params.id;
+      const query = {_id: new ObjectId(id)};
+      console.log('entered update');
+      const updatedData = {
+        $set: {
+          spot_name: req.body.spot_name,
+          country: req.body.country,
+          img: req.body.img,
+          location: req.body.location,
+          description: req.body.description,
+          cost: req.body.cost,
+          season: req.body.season,
+          time: req.body.time,
+          visitors_per_year: req.body.visitors_per_year
+        }
+      }
+
+      const result = await spots.updateOne(query, updatedData)
+      res.send(result);
+
+    })
+
+    // delete a spot
+    app.delete('/delete/:id', async(req, res) => {
+      const id = req.params.id;
+      const query = {_id: new ObjectId(id)};
+      const result = await spots.deleteOne(query);
+      res.send(result);
+    })
 
     // Connect the client to the server	(optional starting in v4.7)
     await client.connect();
