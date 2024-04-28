@@ -72,7 +72,6 @@ async function run() {
 
     // get spots by email
     app.get('/:email', async(req, res) => {
-      console.log('entered in email finding');
       const email = req.params.email;
       const query = {email: email};
       const cursor = spots.find(query);
